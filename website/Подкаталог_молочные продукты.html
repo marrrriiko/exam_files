@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Молочные продукты</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .product-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 200px; /* Ширина карточки */
+            margin: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s; /* Плавный переход для эффекта увеличения */
+            cursor: pointer; /* Указатель курсора при наведении */
+        }
+
+        .product-card img {
+            width: 100%; /* Ширина изображения карточки */
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .product-card p {
+            padding: 0 10px;
+            color: #555;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05); /* Увеличение карточки при наведении */
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 20px auto; /* Центрирование кнопки */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Молочные продукты</h1>
+    </header>
+
+    <main>
+        <div class="product-container">
+            <div class="product-card" onclick="window.location.href='Карточка_молоко.html'"> <!-- Переход на карточку молока -->
+                <img src="карточки_молоко.jpg" alt="Молоко">
+                <h3>Молоко</h3>
+                <p>Свежайшее молоко от фермеров.</p>
+            </div>
+            <div class="product-card">
+                <img src="карточки_сыр.jpg" alt="Сыр">
+                <h3>Сыр</h3>
+                <p>Разнообразные сорта сыра.</p>
+            </div>
+            <div class="product-card">
+                <img src="карточки_творог.jpg" alt="Творог">
+                <h3>Творог</h3>
+                <p>Натуральный творог без добавок.</p>
+            </div>
+            <div class="product-card">
+                <img src="карточки_творожная масса.jpg" alt="Творожная масса">
+                <h3>Творожная масса</h3>
+                <p>Вкусная творожная масса для десертов.</p>
+            </div>
+            <div class="product-card">
+                <img src="карточки_сырки глазированные.jpg" alt="Глазированные сырки">
+                <h3>Глазированные сырки</h3>
+                <p>Сладкие глазированные сырки.</p>
+            </div>
+            <div class="product-card">
+                <img src="карточки_ряженка.png" alt="Ряженка">
+                <h3>Ряженка</h3>
+                <p>Натуральная ряженка с домашним вкусом.</p>
+            </div>
+        </div>
+
+        <button id="backButton">На главную</button>
+    </main>
+
+    <script>
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.location.href = 'Главная страница.html'; // Переход на главную страницу
+        });
+    </script>
+</body>
+</html>

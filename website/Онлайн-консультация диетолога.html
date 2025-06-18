@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онлайн-консультация диетолога</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .feedback-form {
+            margin-top: 20px;
+        }
+
+        .feedback-form input[type="text"], 
+        .feedback-form textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Онлайн-консультация диетолога CowWow</h1>
+</header>
+
+<div class="container">
+    <iframe src="https://napopravku.ru/online-consultations/online-dietolog/?ysclid=m8o81okj8t18320204" title="Консультация диетолога"></iframe>
+
+    <div class="feedback-form">
+        <h2>Оставьте свой вопрос или отзыв</h2>
+        <input type="text" id="userName" placeholder="Ваше имя" required>
+        <textarea id="userFeedback" placeholder="Ваш вопрос или отзыв" rows="4" required></textarea>
+        <button onclick="submitFeedback()">Отправить</button>
+    </div>
+
+    <button onclick="window.location.href='Главная страница.html'">На главную</button>
+</div>
+
+<script>
+    function submitFeedback() {
+        const name = document.getElementById('userName').value;
+        const feedback = document.getElementById('userFeedback').value;
+
+        if (name === '' || feedback === '') {
+            alert('Пожалуйста, заполните все поля!');
+            return;
+        }
+
+        // Здесь можно добавить код для отправки данных на сервер или в базу данных
+        alert(`Спасибо за ваш отзыв или вопрос, ${name}! Ваше обращение успешно отправлено.`);
+
+        // Очистка формы после отправки
+        document.getElementById('userName').value = '';
+        document.getElementById('userFeedback').value = '';
+    }
+</script>
+
+</body>
+</html>
