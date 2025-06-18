@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer; /* Указатель при наведении */
+        }
+
+        .story {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Модальное окно */
+        .modal {
+            display: none; /* Скрыто по умолчанию */
+            position: fixed; /* Остается на месте */
+            z-index: 1000; /* Поверх других элементов */
+            left: 0;
+            top: 0;
+            width: 100%; /* Полная ширина */
+            height: 100%; /* Полная высота */
+            overflow: auto; /* Включает прокрутку при необходимости */
+            background-color: rgba(0,0,0,0.9); /* Черный фон с прозрачностью */
+            justify-content: center; /* Центрируем по горизонтали */
+            align-items: center; /* Центрируем по вертикали */
+        }
+
+        .modal-content {
+            max-width: 90%; /* Максимальная ширина изображения */
+            max-height: 80%; /* Максимальная высота изображения */
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 3px; /* Закругление для кнопок */
+        }
+
+        .prev {
+            left: 0; /* Позиция для левой стрелки */
+        }
+
+        .next {
+            right: 0; /* Позиция для правой стрелки */
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(255,255,255,0.8);
+            color: black; /* Цвет текста при наведении */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>О нас</h1>
+</header>
+
+<div class="container">
+    <h2>Наша история</h2>
+    <div class="story">
+        <p>
+            CowWow был основан группой энтузиастов, стремящихся соединить фермеров и покупателей, чтобы обеспечить доступ к свежим и качественным продуктам. Наша команда состоит из людей, которые любят природу и верят в важность устойчивого сельского хозяйства.
+        </p>
+        <p>
+            Идея создать CowWow возникла во время одной из поездок по местным рынкам, когда мы осознали, насколько сложно фермерам находить свою аудиторию. Мы решили создать платформу, которая не только поможет фермерам продавать свои продукты напрямую потребителям, но и позволит покупателям узнать больше о происхождении своих продуктов.
+        </p>
+        <p>
+            Наша миссия — поддерживать местных фермеров и продвигать здоровый образ жизни. Мы стремимся создать сообщество, где каждый сможет найти свежие продукты, а фермеры — своих клиентов. Мы верим, что каждый должен иметь возможность получать доступ к качественным продуктам, которые были выращены с заботой и любовью.
+        </p>
+        <p>
+            В CowWow мы также активно поддерживаем экологические инициативы и устойчивое сельское хозяйство. Мы работаем только с фермерами, которые придерживаются этичных методов ведения бизнеса и заботятся о своей земле.
+        </p>
+        <p>
+            Присоединяйтесь к нам в этом путешествии! Давайте вместе сделаем мир лучше, поддерживая местных фермеров и выбирая качественные продукты.
+        </p>
+    </div>
+
+    <h2>Наша фотогалерея</h2>
+    <div class="gallery">
+        <img src="О нас 1.jpg" alt="Фотография 1" onclick="openModal(0)">
+        <img src="О нас 2.jpg" alt="Фотография 2" onclick="openModal(1)">
+        <img src="О нас 3.jpg" alt="Фотография 3" onclick="openModal(2)">
+        <img src="О нас 4.jpg" alt="Фотография 4" onclick="openModal(3)">
+        <img src="О нас 5.jpg" alt="Фотография 5" onclick="openModal(4)">
+        <img src="О нас 6.jpg" alt="Фотография 6" onclick="openModal(5)">
+        <img src="О нас 7.jpg" alt="Фотография 7" onclick="openModal(6)">
+        <img src="О нас 8.jpg" alt="Фотография 8" onclick="openModal(7)">
+        <img src="О нас 9.jpg" alt="Фотография 9" onclick="openModal(8)">
+        <img src="О нас 10.jpg" alt="Фотография 10" onclick="openModal(9)">
+        <img src="О нас 11.jpg" alt="Фотография 11" onclick="openModal(10)">
+        <img src="О нас 12.jpg" alt="Фотография 12" onclick="openModal(11)">
+        <img src="О нас 13.jpg" alt="Фотография 13" onclick="openModal(12)">
+        <img src="О нас 14.jpg" alt="Фотография 14" onclick="openModal(13)">
+        <img src="О нас 15.jpg" alt="Фотография 15" onclick="openModal(14)">
+        <img src="О нас 16.jpg" alt="Фотография 16" onclick="openModal(15)">
+        <img src="О нас 17.jpg" alt="Фотография 17" onclick="openModal(16)">
+        <img src="О нас 18.jpg" alt="Фотография 18" onclick="openModal(17)">
+        <img src="О нас 19.jpg" alt="Фотография 19" onclick="openModal(18)">
+        <img src="О нас 20.jpg" alt="Фотография 20" onclick="openModal(19)">
+    </div>
+
+    <a href="Главная страница.html" class="back-button">На главную</a>
+</div>
+
+<!-- Модальное окно -->
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+    <a class="next" onclick="changeImage(1)">&#10095;</a>
+</div>
+
+<script>
+    const images = [
+        "О нас 1.jpg",
+        "О нас 2.jpg",
+        "О нас 3.jpg",
+        "О нас 4.jpg",
+        "О нас 5.jpg"
+    ];
+
+    let currentIndex = -1;
+
+    function openModal(index) {
+        currentIndex = index; // Запоминаем текущий индекс
+        document.getElementById("modalImage").src = images[currentIndex];
+        document.getElementById("myModal").style.display = "flex"; // Меняем на flex для центрирования
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    function changeImage(direction) {
+        currentIndex += direction;
+
+        // Проверка границ массива
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1; // Перейти к последнему изображению
+        } else if (currentIndex >= images.length) {
+            currentIndex = 0; // Перейти к первому изображению
+        }
+
+        document.getElementById("modalImage").src = images[currentIndex];
+    }
+
+    // Закрытие модального окна при нажатии вне изображения
+    window.onclick = function(event) {
+        const modal = document.getElementById("myModal");
+        if (event.target === modal) {
+            closeModal();
+        }
+    }
+</script>
+
+</body>
+</html>

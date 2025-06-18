@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="file"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .avatar-container {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .avatar-container img {
+            width: 100px; /* Ширина аватара */
+            height: 100px; /* Высота аватара */
+            border-radius: 50%; /* Круглая форма */
+            border: 2px solid #4CAF50; /* Рамка вокруг аватара */
+        }
+
+        .nav-links {
+            margin-top: 20px;
+        }
+
+        .nav-links a {
+            display: block;
+            margin-bottom: 10px;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Личный кабинет CowWow</h1>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <form id="profileForm">
+                <div class="avatar-container">
+                    <img id="avatarPreview" src="пустой аватар.jpg" alt="Аватар">
+                </div>
+                <div class="form-group">
+                    <label for="avatar">Фото:</label>
+                    <input type="file" id="avatar" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="fullName">ФИО:</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Электронная почта:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон:</label>
+                    <input type="text" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Адрес:</label>
+                    <input type="text" id="address">
+                </div>
+                <div class="form-group">
+                    <label for="bio">О себе:</label>
+                    <textarea id="bio" rows="4"></textarea>
+                </div>
+                <button type="submit">Сохранить</button>
+            </form>
+
+            <div class="nav-links">
+                <h3>Разделы личного кабинета:</h3>
+                <a href="">Личные данные</a>
+                <a href="">Мои объявления</a>
+                <a href="">Избранное</a>
+                <a href="">Мои заказы</a>
+                <a href="">Мои отзывы</a>
+                <a href="">Настройки</a>
+                <a href="">Система уведомлений</a>
+            </div>
+
+            <button id="backButton">На главную</button>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('avatar').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('avatarPreview').src = e.target.result; // Устанавливаем новое изображение
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('profileForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Отменяем стандартное поведение формы
+
+            // Здесь можно добавить код для сохранения данных
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const bio = document.getElementById('bio').value;
+
+            // Пример сохранения данных (можно заменить на реальную логику)
+            console.log('Данные сохранены:', { fullName, email, phone, address, bio });
+
+            alert('Данные успешно сохранены!');
+        });
+
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.location.href = 'Главная страница.html';
+        });
+    </script>
+</body>
+</html>
