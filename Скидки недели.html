@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скидки недели</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .backButton {
+            margin-top: 20px;
+            display: block;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .discounts {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .discount-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            width: 200px;
+            transition: transform 0.3s; /* Плавный переход при изменении размера */
+        }
+
+        .discount-item:hover {
+            transform: scale(1.05); /* Увеличение размера при наведении */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавление тени для эффекта */
+        }
+
+        .discount-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Скидки недели</h1>
+    </header>
+
+    <main>
+        <section class="discounts">
+            <div class="discount-item">
+                <img src="огурцы.jpg" alt="Огурцы">
+                <h2>Свежие огурцы</h2>
+                <p>Скидка 20%! Только на этой неделе.</p>
+            </div>
+            <div class="discount-item">
+                <img src="сыр.jpg" alt="Сыр">
+                <h2>Натуральный сыр</h2>
+                <p>Скидка 15%! Не упустите шанс!</p>
+            </div>
+            <div class="discount-item" onclick="window.location.href='Карточка_молоко.html'"> <!-- Переход на карточку молока -->
+                <img src="молоко.jpg" alt="Молоко">
+                <h2>Домашнее молоко</h2>
+                <p>Скидка 10%! Спешите за покупками!</p>
+            </div>
+            <div class="discount-item">
+                <img src="томаты.jpg" alt="Томаты">
+                <h2>Сочные томаты</h2>
+                <p>Скидка 25%! Успейте купить!</p>
+            </div>
+            <div class="discount-item">
+                <img src="цыплята.jpg" alt="Цыплята">
+                <h2>Цыплята</h2>
+                <p>Скидка 30%! От лучших несушек! Только на этой неделе.</p>
+            </div>
+        </section>
+
+        <div class="backButton">
+            <button onclick="window.location.href='Главная страница.html'">На главную</button>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.location.href = 'Главная страница.html';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Служба поддержки</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Подключение внешнего CSS файла, если нужно -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        .faq {
+            margin-top: 20px;
+        }
+
+        .faq-item {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+
+        .faq-question {
+            cursor: pointer;
+            color: #4CAF50;
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 5px;
+        }
+
+        .chat-info {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Служба поддержки CowWow</h1>
+</header>
+
+<div class="container">
+    <h2>Часто задаваемые вопросы (FAQ)</h2>
+    
+    <div class="faq">
+        <div class="faq-item">
+            <div class="faq-question">Как я могу сделать заказ?</div>
+            <div class="faq-answer">Чтобы сделать заказ, выберите товар на нашем сайте и добавьте его в корзину. Затем перейдите к оформлению заказа.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Как я могу отменить свой заказ?</div>
+            <div class="faq-answer">Для отмены заказа свяжитесь с нашей службой поддержки в течение 2 часов после оформления заказа.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Как я могу вернуть товар?</div>
+            <div class="faq-answer">Вы можете вернуть товар в течение 2 дней с момента получения. Пожалуйста, свяжитесь с нашей службой поддержки для получения инструкций.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Каковы способы оплаты?</div>
+            <div class="faq-answer">Мы принимаем различные способы оплаты, включая банковские переводы.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Как долго будет доставляться мой заказ?</div>
+            <div class="faq-answer">Сроки доставки зависят от вашего местоположения и выбранного способа доставки. Обычно доставка занимает от 1 до 3 рабочих дней.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Могу ли я изменить адрес доставки после оформления заказа?</div>
+            <div class="faq-answer">Если ваш заказ еще не был отправлен, вы можете изменить адрес доставки, связавшись с нашей службой поддержки.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Что делать, если я получил поврежденный товар?</div>
+            <div class="faq-answer">Если вы получили поврежденный товар, пожалуйста, свяжитесь с нашей службой поддержки как можно скорее для получения инструкций по возврату или обмену.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Как я могу отслеживать свой заказ?</div>
+            <div class="faq-answer">После отправки вашего заказа вы получите электронное письмо с номером отслеживания и ссылкой на сайт курьерской службы.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Предоставляете ли вы скидки для оптовых покупателей?</div>
+            <div class="faq-answer">Да, мы предлагаем специальные условия для оптовых покупателей. Пожалуйста, свяжитесь с нами для получения подробной информации.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Как я могу связаться с вашей службой поддержки?</div>
+            <div class="faq-answer">Вы можете связаться с нашей службой поддержки через контактную форму на сайте или по телефону.</div>
+        </div>
+
+    </div>
+
+    <a href="Главная страница.html" class="back-button">На главную</a>
+
+    <div class="chat-info">
+        Если вы не нашли ответ на свой вопрос, пожалуйста, обратитесь к чату с оператором.
+    </div>
+</div>
+
+<script>
+    // Интерактивность для FAQ
+    const questions = document.querySelectorAll('.faq-question');
+    questions.forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            answer.style.display = answer.style.display === 'none' || answer.style.display === '' ? 'block' : 'none';
+        });
+    });
+
+    // Код Replain
+    window.replainSettings = { id: '66424bb2-5077-41db-aa02-bbf9c97abaad' };
+    (function(u){
+        var s=document.createElement('script');
+        s.async=true;
+        s.src=u;
+        var x=document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s,x);
+    })('https://widget.replain.cc/dist/client.js');
+</script>
+
+</body>
+</html>
